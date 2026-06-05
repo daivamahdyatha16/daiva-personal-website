@@ -1,17 +1,26 @@
 function Hero() {
     return (
         <section>
-        <h1>Daiva Mahdyatha</h1>
+            <p>Chapter I</p>
+            <h1>
+                Daiva Mahdyatha
+            </h1>
 
-        <h2>Software Engineer</h2>
 
-        <p>Welcome to my personal website! I am a software engineer with a passion for creating innovative solutions and 
-            building impactful applications. With experience in various programming languages and technologies, 
-            I am dedicated to delivering high-quality code and continuously learning to stay at the forefront of the industry.</p>
+            <h2>Renaissance Geek</h2>
 
-        <button>
-            Contact Me
-        </button>
+            <p>Exploring technology,improving systems,
+                and building meaningful solutions.</p>
+
+            <p>Currently working in the IT Division of Indonesian Immigration,
+                with experience in application testing and business development.</p>
+
+            <p>Now expanding my journey into Full Stack Development.</p>
+
+            <button>Explore My Work</button>
+            <button>
+                Contact Me
+            </button>
         </section>
     );
 }

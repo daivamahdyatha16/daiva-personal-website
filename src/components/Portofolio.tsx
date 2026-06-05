@@ -1,27 +1,44 @@
-function Portofolio() {
+function Portfolio() {
   return (
     <section>
-      <h2>Portofolio</h2>
+      <p>Chapter IV</p>
+
+      <h2>Selected Works</h2>
 
       <div>
-        <h3>Visa Web Application Testing Project</h3>
+        <h3>Visa Web Application Testing</h3>
+
         <p>
-          In this project, I was responsible for testing a web application used
-          for visa processing. I conducted comprehensive testing to ensure the
-          application's functionality, usability, and performance met the
-          required standards. This involved creating test cases, executing
-          tests, and reporting any issues or bugs found during the testing
-          process. The goal was to ensure a smooth user experience and reliable
-          performance of the visa web application.
+          Application testing and quality assurance activities
+          for immigration digital services.
         </p>
+
+        <button>View Project</button>
       </div>
 
       <div>
-        <h3>Personal Website</h3>
-        <p>Built using React and TypeScript.</p>
+        <h3>Personal Portfolio Website</h3>
+
+        <p>
+          A personal portfolio website built using React,
+          TypeScript, and Tailwind CSS.
+        </p>
+
+        <button>View Project</button>
+      </div>
+
+      <div>
+        <h3>Full Stack Development Journey</h3>
+
+        <p>
+          Documenting projects, learning progress,
+          and future development work.
+        </p>
+
+        <button>View Project</button>
       </div>
     </section>
   );
 }
 
-export default Portofolio;
+export default Portfolio;

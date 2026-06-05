@@ -1,16 +1,30 @@
 function About() {
   return (
     <section>
+      <p>
+        Chapter II
+      </p>
       <h2>About Me</h2>
       <p>
-        I am currently working in the IT division of Indonesian Immigration.
+        I am currently working in the IT Division of Indonesian Immigration,
+        where I focus on application testing, business development,
+        and digital service improvement.
       </p>
 
-      <p>My role focuses on application testing and business development.</p>
+      <p>Working closely with systems, business processes, and users
+        has given me valuable insights into how technology can solve
+        real-world problems and improve public services.</p>
 
       <p>
-        Currently I am switching careers to become a software engineer, and I am
-        excited to embark on this new journey in the tech industry.
+        Today, I am expanding my expertise into Full Stack Development,
+        continuously learning modern technologies such as React,
+        TypeScript, and web application development.
+      </p>
+
+      <p>
+        I believe that curiosity, adaptability,
+        and lifelong learning are essential qualities 
+        for understanding systems and building meaningful digital solutions.
       </p>
     </section>
   );
