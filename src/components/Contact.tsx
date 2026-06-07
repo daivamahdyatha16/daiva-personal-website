@@ -18,7 +18,7 @@ function Contact() {
         Feel free to reach out for collaboration, discussion, or opportunities.
       </p>
 
-      <div className="grid md:grid-cols-3 gap-6 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         <div
           className="
               border border-[#8B6B3D]

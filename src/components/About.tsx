@@ -19,7 +19,7 @@ function About() {
         About Me
       </h2>
 
-      <div className="flex gap-16 mt-8">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-8">
         
         <div className="flex-1">
           <p className="max-w-2xl">
@@ -42,7 +42,7 @@ function About() {
         </div>
 
         
-        <div className="w-80">
+        <div className="w-full md:w-80">
           <div className="border border-[#8B6B3D] p-6 rounded-md">
             <h3
               className="text-xl font-semibold mb-5"

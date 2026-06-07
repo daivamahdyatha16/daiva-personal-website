@@ -41,30 +41,30 @@ function Skills() {
         Engineering
       </h3>
 
-      <div className="grid grid-cols-5 gap-8 mt-6 ">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mt-6 ">
         <div className={skillClass}>
           <FaHtml5 className="text-3xl mb-2" />
-          <p>HTML</p>
+          <p className="text-center text-sm">HTML</p>
         </div>
 
         <div className={skillClass}>
           <FaCss3Alt className="text-3xl mb-2" />
-          <p>CSS</p>
+          <p className="text-center text-sm">CSS</p>
         </div>
 
         <div className={skillClass}>
           <SiJavascript className="text-3xl mb-2" />
-          <p>JavaScript</p>
+          <p className="text-center text-sm">JavaScript</p>
         </div>
 
         <div className={skillClass}>
           <SiTypescript className="text-3xl mb-2" />
-          <p>TypeScript</p>
+          <p className="text-center text-sm">TypeScript</p>
         </div>
 
         <div className={skillClass}>
           <FaReact className="text-3xl mb-2" />
-          <p>React</p>
+          <p className="text-center text-sm">React</p>
         </div>
       </div>
 
@@ -75,30 +75,30 @@ function Skills() {
         Analysis
       </h3>
 
-      <div className="grid grid-cols-5 gap-8 mt-6 ">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mt-6 ">
         <div className={skillClass}>
           <FaBug className="text-3xl mb-2" />
-          <p>Application Testing</p>
+          <p className="text-center text-sm">Application Testing</p>
         </div>
 
         <div className={skillClass}>
           <FaChartLine className="text-3xl mb-2" />
-          <p>Requirements Analysis</p>
+          <p className="text-center text-sm">Requirements Analysis</p>
         </div>
 
         <div className={skillClass}>
           <MdOutlineDeveloperMode className="text-3xl mb-2" />
-          <p>Business Analysis</p>
+          <p className="text-center text-sm">Business Analysis</p>
         </div>
 
         <div className={skillClass}>
           <GiProcessor className="text-3xl mb-2" />
-          <p>Process Improvement</p>
+          <p className="text-center text-sm">Process Improvement</p>
         </div>
 
         <div className={skillClass}>
           <FaUsers className="text-3xl mb-2" />
-          <p>Stakeholder Management</p>
+          <p className="text-center text-sm">Stakeholder Management</p>
         </div>
       </div>
 
@@ -109,25 +109,25 @@ function Skills() {
         Systems & Data
       </h3>
 
-      <div className="grid grid-cols-5 gap-8 mt-6 ">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mt-6 ">
         <div className={skillClass}>
           <FaDatabase className="text-3xl mb-2" />
-          <p>SQL</p>
+          <p className="text-center text-sm">SQL</p>
         </div>
 
         <div className={skillClass}>
           <MdSystemSecurityUpdateGood className="text-3xl mb-2" />
-          <p>System Analysis</p>
+          <p className="text-center text-sm">System Analysis</p>
         </div>
 
         <div className={skillClass}>
           <GiProcessor className="text-3xl mb-2" />
-          <p>Data Management</p>
+          <p className="text-center text-sm">Data Management</p>
         </div>
 
         <div className={skillClass}>
           <FaFileAlt className="text-3xl mb-2" />
-          <p>Documentation</p>
+          <p className="text-center text-sm">Documentation</p>
         </div>
       </div>
 
@@ -138,30 +138,30 @@ function Skills() {
         Professional
       </h3>
 
-      <div className="grid grid-cols-5 gap-8 mt-6 ">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mt-6 ">
         <div className={skillClass}>
           <FaComments className="text-3xl mb-2" />
-          <p>Communication</p>
+          <p className="text-center text-sm">Communication</p>
         </div>
 
         <div className={skillClass}>
           <FaHandshake className="text-3xl mb-2" />
-          <p>Collaboration</p>
+          <p className="text-center text-sm">Collaboration</p>
         </div>
 
         <div className={skillClass}>
           <FaLightbulb className="text-3xl mb-2" />
-          <p>Problem Solving</p>
+          <p className="text-center text-sm">Problem Solving</p>
         </div>
 
         <div className={skillClass}>
           <FaUsers className="text-3xl mb-2" />
-          <p>Adaptability</p>
+          <p className="text-center text-sm">Adaptability</p>
         </div>
 
         <div className={skillClass}>
           <FaReact className="text-3xl mb-2" />
-          <p>Continuous Learning</p>
+          <p className="text-center text-sm">Continuous Learning</p>
         </div>
       </div>
     </section>
