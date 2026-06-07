@@ -2,13 +2,13 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="py-16 flex gap-12 border-b border-[#8B6B3D] max-w-6xl mx-auto
+      className="py-16 flex gap-12 border-b border-[#8B6B3D] mx-auto
 "
     >
       <div className="max-w-3xl flex-1">
         <p className="uppercase tracking-[0.3em] text-sm">Chapter I</p>
         <h1
-          className="text-6xl font-bold"
+          className="text-[5rem] font-bold"
           style={{ fontFamily: "Playfair Display" }}
         >
           Daiva Mahdyatha

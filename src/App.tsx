@@ -11,7 +11,7 @@ function App() {
     <div className="flex bg-[#f8e6cb] text-[#2D1B0E]">
       <Sidebar />
 
-      <main className="bg-[#f8e6cb] text-[#2D1B0E] flex-1 p-10">
+      <main className="bg-[#f8e6cb] text-[#2D1B0E] flex-1 max-w-7xl mx-auto px-10">
         <Hero />
         <About />
         <Skills />

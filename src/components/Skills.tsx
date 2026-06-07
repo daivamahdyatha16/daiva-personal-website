@@ -1,5 +1,3 @@
-import { SiTypescript, SiJavascript, SiMysql } from "react-icons/si";
-
 import {
   FaBug,
   FaChartLine,
@@ -9,14 +7,26 @@ import {
   FaReact,
   FaHtml5,
   FaCss3Alt,
+  FaDatabase,
+  FaUsers,
+  FaLightbulb,
 } from "react-icons/fa";
-import { MdOutlineDeveloperMode } from "react-icons/md";
-import { VscCommentUnresolved } from "react-icons/vsc";
+
+import { SiJavascript, SiTypescript } from "react-icons/si";
+
+import {
+  MdOutlineDeveloperMode,
+  MdSystemSecurityUpdateGood,
+} from "react-icons/md";
 import { GiProcessor } from "react-icons/gi";
 function Skills() {
+  const skillClass =
+    "flex flex-col items-center transition-all duration-300 hover:-translate-y-1 hover:text-[#8B6B3D] cursor-default";
+
   return (
     <section id="skills" className="py-12 border-b border-[#8B6B3D]">
       <p className="uppercase tracking-[0.3em] text-sm">Chapter III</p>
+
       <h2
         className="text-4xl font-bold"
         style={{ fontFamily: "Playfair Display" }}
@@ -25,177 +35,133 @@ function Skills() {
       </h2>
 
       <h3
-        className="mt-6 text-2xl font-semibold"
+        className="mt-8 text-2xl font-semibold"
         style={{ fontFamily: "Playfair Display" }}
       >
         Engineering
       </h3>
-      <div className="grid grid-cols-5 gap-8 mt-4 max-w-4xl">
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaHtml5 className="text-3xl mb-2 " /> <p>HTML</p>
+
+      <div className="grid grid-cols-5 gap-8 mt-6 ">
+        <div className={skillClass}>
+          <FaHtml5 className="text-3xl mb-2" />
+          <p>HTML</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaCss3Alt className="text-3xl mb-2" /> <p>CSS</p>
+
+        <div className={skillClass}>
+          <FaCss3Alt className="text-3xl mb-2" />
+          <p>CSS</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <SiJavascript className="text-3xl mb-2" /> <p>JavaScript</p>
+
+        <div className={skillClass}>
+          <SiJavascript className="text-3xl mb-2" />
+          <p>JavaScript</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <SiTypescript className="text-3xl mb-2" /> <p>TypeScript</p>
+
+        <div className={skillClass}>
+          <SiTypescript className="text-3xl mb-2" />
+          <p>TypeScript</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaReact className="text-3xl mb-2" /> <p>React</p>
+
+        <div className={skillClass}>
+          <FaReact className="text-3xl mb-2" />
+          <p>React</p>
         </div>
       </div>
 
       <h3
-        className="mt-6 text-2xl font-semibold"
+        className="mt-10 text-2xl font-semibold"
         style={{ fontFamily: "Playfair Display" }}
       >
         Analysis
       </h3>
-      <div className="grid grid-cols-4 gap-8 mt-4 max-w-4xl">
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaBug className="text-3xl mb-2" /> <p>Application Testing</p>
+
+      <div className="grid grid-cols-5 gap-8 mt-6 ">
+        <div className={skillClass}>
+          <FaBug className="text-3xl mb-2" />
+          <p>Application Testing</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaChartLine className="text-3xl mb-2" /> <p>Requirements Analysis</p>
+
+        <div className={skillClass}>
+          <FaChartLine className="text-3xl mb-2" />
+          <p>Requirements Analysis</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <MdOutlineDeveloperMode className="text-3xl mb-2" />{" "}
-          <p>Business Development</p>
+
+        <div className={skillClass}>
+          <MdOutlineDeveloperMode className="text-3xl mb-2" />
+          <p>Business Analysis</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <VscCommentUnresolved className="text-3xl mb-2" />{" "}
-          <p>Problem Solving</p>
+
+        <div className={skillClass}>
+          <GiProcessor className="text-3xl mb-2" />
+          <p>Process Improvement</p>
+        </div>
+
+        <div className={skillClass}>
+          <FaUsers className="text-3xl mb-2" />
+          <p>Stakeholder Management</p>
         </div>
       </div>
 
       <h3
-        className="mt-6 text-2xl font-semibold"
+        className="mt-10 text-2xl font-semibold"
         style={{ fontFamily: "Playfair Display" }}
       >
-        Systems and Data
+        Systems & Data
       </h3>
-      <div className="grid grid-cols-3 gap-12 mt-4 max-w-3xl">
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <SiMysql className="text-3xl mb-2" />
+
+      <div className="grid grid-cols-5 gap-8 mt-6 ">
+        <div className={skillClass}>
+          <FaDatabase className="text-3xl mb-2" />
           <p>SQL</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <GiProcessor className="text-3xl mb-2" /> <p>Process Improvement</p>
+
+        <div className={skillClass}>
+          <MdSystemSecurityUpdateGood className="text-3xl mb-2" />
+          <p>System Analysis</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaChartLine className="text-3xl mb-2" /> <p>System Analysis</p>
+
+        <div className={skillClass}>
+          <GiProcessor className="text-3xl mb-2" />
+          <p>Data Management</p>
+        </div>
+
+        <div className={skillClass}>
+          <FaFileAlt className="text-3xl mb-2" />
+          <p>Documentation</p>
         </div>
       </div>
 
       <h3
-        className="mt-6 text-2xl font-semibold"
+        className="mt-10 text-2xl font-semibold"
         style={{ fontFamily: "Playfair Display" }}
       >
-        Professional Skills
+        Professional
       </h3>
-      <div className="grid grid-cols-3 gap-12 mt-4 max-w-3xl">
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaFileAlt className="text-3xl mb-2" /> <p>Documentation</p>
+
+      <div className="grid grid-cols-5 gap-8 mt-6 ">
+        <div className={skillClass}>
+          <FaComments className="text-3xl mb-2" />
+          <p>Communication</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaComments className="text-3xl mb-2" /> <p>Communication</p>
+
+        <div className={skillClass}>
+          <FaHandshake className="text-3xl mb-2" />
+          <p>Collaboration</p>
         </div>
-        <div
-          className="flex flex-col items-center
-          transition-all duration-300
-          hover:-translate-y-1
-          hover:text-[#8B6B3D]
-          cursor-default"
-        >
-          <FaHandshake className="text-3xl mb-2" />{" "}
-          <p>Stakeholder Collaboration</p>
+
+        <div className={skillClass}>
+          <FaLightbulb className="text-3xl mb-2" />
+          <p>Problem Solving</p>
+        </div>
+
+        <div className={skillClass}>
+          <FaUsers className="text-3xl mb-2" />
+          <p>Adaptability</p>
+        </div>
+
+        <div className={skillClass}>
+          <FaReact className="text-3xl mb-2" />
+          <p>Continuous Learning</p>
         </div>
       </div>
     </section>
