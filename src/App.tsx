@@ -4,17 +4,22 @@ import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import Portofolio from "./components/Portofolio";
 import Skills from "./components/Skills";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <>
-      <Hero />
-      <About />
-      <Skills />
-      <Portofolio />
-      <Experience />
-      <Contact />
-    </>
+    <div className="flex bg-[#F5EBD7] text-[#2D1B0E]">
+      <Sidebar />
+
+      <main className="bg-[#F5EBD7] text-[#2D1B0E] flex-1 p-10">
+        <Hero />
+        <About />
+        <Skills />
+        <Portofolio />
+        <Experience />
+        <Contact />
+      </main>
+    </div>
   );
 }
 

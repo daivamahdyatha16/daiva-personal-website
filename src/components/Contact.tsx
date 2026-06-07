@@ -1,8 +1,11 @@
 function Contact() {
   return (
-    <section>
-      <p>Chapter VI</p>
-      <h2>Contact</h2>
+    <section id="contact" className="py-12">
+      <p className="uppercase tracking-[0.3em] text-sm">Chapter VI</p>
+      <h2 className="text-4xl font-bold"
+      style={{ fontFamily: 'Playfair Display' }}>
+        Contact
+      </h2>
 
       <p>Email: daivamahdyatha16@gmail.com</p>
 

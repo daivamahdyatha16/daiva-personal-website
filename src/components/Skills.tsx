@@ -1,10 +1,13 @@
 function Skills() {
   return (
-    <section>
-      <p>
+    <section id="skills" className="py-12">
+      <p className="uppercase tracking-[0.3em] text-sm">
         Chapter III
       </p>
-      <h2>Skills</h2>
+      <h2 className="text-4xl font-bold"
+      style={{ fontFamily: 'Playfair Display' }}>
+        Skills
+      </h2>
 
       <h3>
         Engineering

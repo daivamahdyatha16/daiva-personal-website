@@ -1,8 +1,11 @@
 function Experience() {
   return (
-    <section>
-      <p>Chapter V</p>
-      <h2>Experience</h2>
+    <section id="experience" className="py-12">
+      <p className="uppercase tracking-[0.3em] text-sm">Chapter V</p>
+      <h2 className="text-4xl font-bold"
+      style={{ fontFamily: 'Playfair Display' }}>
+        Experience
+      </h2>
       <div>
         <h3>Immigration IT Team Lead - Padang Immigration Office</h3>
         <p>2026 - recent</p>

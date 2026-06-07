@@ -1,15 +1,19 @@
 function Hero() {
     return (
-        <section>
-            <p>Chapter I</p>
-            <h1>
+        <section id="hero" className="py-16">
+            <p className="uppercase tracking-[0.3em] text-sm">Chapter I</p>
+            <h1 className="text-6xl font-bold"
+            style={{ fontFamily: 'Playfair Display' }}>
                 Daiva Mahdyatha
             </h1>
 
 
-            <h2>Renaissance Geek</h2>
+            <h2 className="text-2xl font-semibold mt-4"
+            style={{ fontFamily: 'Playfair Display' }}>
+                Renaissance Geek
+            </h2>
 
-            <p>Exploring technology,improving systems,
+            <p className="mt-6 max-w-2xl">Exploring technology,improving systems,
                 and building meaningful solutions.</p>
 
             <p>Currently working in the IT Division of Indonesian Immigration,

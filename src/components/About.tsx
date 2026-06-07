@@ -1,10 +1,13 @@
 function About() {
   return (
-    <section>
-      <p>
+    <section id="about" className="py-12">
+      <p className="uppercase tracking-[0.3em] text-sm">
         Chapter II
       </p>
-      <h2>About Me</h2>
+      <h2 className="text-4xl font-bold"
+      style={{ fontFamily: 'Playfair Display' }}>
+        About Me
+      </h2>
       <p>
         I am currently working in the IT Division of Indonesian Immigration,
         where I focus on application testing, business development,
