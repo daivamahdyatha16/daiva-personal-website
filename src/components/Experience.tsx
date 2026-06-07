@@ -1,43 +1,86 @@
 function Experience() {
   return (
-    <section id="experience" className="py-12">
-      <p className="uppercase tracking-[0.3em] text-sm">Chapter V</p>
-      <h2 className="text-4xl font-bold"
-      style={{ fontFamily: 'Playfair Display' }}>
+    <section
+      id="experience"
+      className="py-12 border-b border-[#8B6B3D]"
+    >
+      <p className="uppercase tracking-[0.3em] text-sm">
+        Chapter V
+      </p>
+
+      <h2
+        className="text-4xl font-bold mb-12"
+        style={{ fontFamily: "Playfair Display" }}
+      >
         Experience
       </h2>
-      <div>
-        <h3>Immigration IT Team Lead - Padang Immigration Office</h3>
-        <p>2026 - recent</p>
-        <p> Leading IT operations and supporting digital services,
-          ensuring reliable infrastructure, system availability,
-          and effective team coordination.
+
+      
+      <div className="grid grid-cols-[80px_30px_1fr] gap-6 mb-10">
+        
+        <div>
+          <p className="font-semibold">2026 - </p>
+          <p>Present</p>
+        </div>
+
+        
+        <div className="flex flex-col items-center">
+          <div className="w-3 h-3 rounded-full bg-[#8B6B3D]"></div>
+          <div className="w-px h-16 bg-[#8B6B3D]"></div>
+          <div className="w-3 h-3 rounded-full bg-[#8B6B3D]"></div>
+        </div>
+
+        
+        <div>
+          <h3
+            className="text-2xl font-semibold"
+            style={{ fontFamily: "Playfair Display" }}
+          >
+            Immigration IT Team Lead
+          </h3>
+
+          <p className="mb-2">
+            Padang Immigration Office
           </p>
-        <h3>Responsibilities</h3>
-        <ul>
-          <li>IT Work Planning</li>
-          <li>Infrastructure Maintenance</li>
-          <li>Application System Management</li>
-          <li>Data Management and Security</li>
-          <li>Monitoring & Evaluation</li>
-        </ul>
 
-        <h3>Immigration System Analyst - Immigration General Directorate</h3>
-        <p>2021 - 2026</p>
-        <p>Working in the IT Division of Indonesian Immigration,
-          focusing on application testing, business development,
-          and digital service improvement initiatives.
-        </p>
-        <h3>Responsibilities</h3>
-        <ul>
-          <li>Application Testing</li>
-          <li>Requirements Analysis</li>
-          <li>Business Development</li>
-          <li>Process Improvement</li>
-          <li>Stakeholder Collaboration</li>
-        </ul>
+          <p className="text-sm">
+            IT Operations • Infrastructure • Team Leadership
+          </p>
+        </div>
+      </div>
 
+      
+      <div className="grid grid-cols-[80px_30px_1fr] gap-6">
+        
+        <div>
+          <p className="font-semibold">2021 -</p>
+          <p>2026</p>
+        </div>
 
+        
+        <div className="flex flex-col items-center">
+          <div className="w-3 h-3 rounded-full bg-[#8B6B3D]"></div>
+          <div className="w-px h-16 bg-[#8B6B3D]"></div>
+          <div className="w-3 h-3 rounded-full bg-[#8B6B3D]"></div>
+        </div>
+
+        
+        <div>
+          <h3
+            className="text-2xl font-semibold"
+            style={{ fontFamily: "Playfair Display" }}
+          >
+            Immigration System Analyst
+          </h3>
+
+          <p className="mb-2">
+            Directorate General of Immigration
+          </p>
+
+          <p className="text-sm">
+            Application Testing • Business Development • Process Improvement
+          </p>
+        </div>
       </div>
     </section>
   );

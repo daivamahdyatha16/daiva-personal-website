@@ -8,10 +8,10 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div className="flex bg-[#F5EBD7] text-[#2D1B0E]">
+    <div className="flex bg-[#f8e6cb] text-[#2D1B0E]">
       <Sidebar />
 
-      <main className="bg-[#F5EBD7] text-[#2D1B0E] flex-1 p-10">
+      <main className="bg-[#f8e6cb] text-[#2D1B0E] flex-1 p-10">
         <Hero />
         <About />
         <Skills />
