@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { FaBars, FaChevronLeft } from "react-icons/fa";
 
 function Sidebar() {
   const [activeSection, setActiveSection] = useState("hero");
-  console.log(activeSection);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -13,16 +16,14 @@ function Sidebar() {
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 0.5 }
     );
 
     sections.forEach((section) => {
       observer.observe(section);
     });
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   const navClass = (section: string) =>
@@ -49,60 +50,81 @@ function Sidebar() {
   `;
 
   return (
-    <aside className="w-64 h-screen border-r border-[#8B6B3D] p-6 sticky top-0 flex flex-col hidden md:block">
-      <h2 className="text-3xl font-bold">DM</h2>
+    <aside
+      className={`
+        hidden md:flex
+        h-screen
+        sticky top-0
+        border-r border-[#8B6B3D]
+        bg-[#f8e6cb]
+        flex-col
+        transition-all duration-300
 
-      <nav className="mt-10">
+        ${isCollapsed ? "w-20 p-4" : "w-64 p-6"}
+      `}
+    >
+      <div className="flex items-center justify-between">
+        {!isCollapsed && (
+          <h2 className="text-3xl font-bold">
+            DM
+          </h2>
+        )}
+
+        <button
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          aria-label="Toggle Sidebar"
+          className="
+            p-2
+            rounded-md
+            hover:bg-[#e8dbc0]
+            transition-colors
+          "
+        >
+          {isCollapsed ? <FaBars /> : <FaChevronLeft />}
+        </button>
+      </div>
+
+      <nav className="mt-10 flex-1">
         <ul className="space-y-4">
           <li>
             <a href="#hero" className={navClass("hero")}>
-              I. Home
+              {isCollapsed ? "I" : "I. Home"}
             </a>
           </li>
 
           <li>
-            <a
-              href="#about"
-              className={navClass("about")}
-            >
-              II. About
+            <a href="#about" className={navClass("about")}>
+              {isCollapsed ? "II" : "II. About"}
             </a>
           </li>
 
           <li>
-            <a
-              href="#skills"
-              className={navClass("skills")}
-            >
-              III. Skills
+            <a href="#skills" className={navClass("skills")}>
+              {isCollapsed ? "III" : "III. Skills"}
             </a>
           </li>
 
           <li>
-            <a
-              href="#portfolio"
-              className={navClass("portfolio")}
-            >
-              IV. Projects
+            <a href="#portfolio" className={navClass("portfolio")}>
+              {isCollapsed ? "IV" : "IV. Projects"}
             </a>
           </li>
 
           <li>
             <a
               href="#experience"
-              className={navClass("experience")}>
-              
-            
-              V. Experience
+              className={navClass("experience")}
+            >
+              {isCollapsed ? "V" : "V. Experience"}
             </a>
           </li>
 
           <li>
             <a
               href="#contact"
-              className={navClass("contact")}>  
-            
-              VI. Contact
+              className={navClass("contact")}
+            >
+              {isCollapsed ? "VI" : "VI. Contact"}
             </a>
           </li>
         </ul>

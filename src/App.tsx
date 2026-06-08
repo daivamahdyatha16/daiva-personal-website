@@ -5,6 +5,7 @@ import Experience from "./components/Experience";
 import Portofolio from "./components/Portofolio";
 import Skills from "./components/Skills";
 import Sidebar from "./components/Sidebar";
+import BackToTop from "./components/BackToTop";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Experience />
         <Contact />
       </main>
+      <BackToTop />
     </div>
   );
 }
