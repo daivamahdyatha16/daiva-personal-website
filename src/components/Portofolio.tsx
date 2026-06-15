@@ -1,4 +1,7 @@
 import { useState } from "react";
+import evisaImg from "../assets/images/evisa.webp";
+import brandywineImg from "../assets/images/brandywine.webp";
+import melodynestImg from "../assets/images/melodynest.webp";
 
 function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
@@ -18,7 +21,7 @@ function Portfolio() {
         <div className="border border-[#8B6B3D] p-4 rounded-xl hover:shadow-lg transition-all duration-300">
           <div className="relative overflow-hidden rounded-lg group">
             <img
-              src="./src/assets/images/evisa.webp"
+              src={evisaImg}
               alt="Visa Project"
               className="
         w-full
@@ -77,8 +80,8 @@ function Portfolio() {
         <div className="border border-[#8B6B3D] p-4 rounded-md">
           <div className="relative overflow-hidden rounded-lg group">
             <img
-              src="./src/assets/images/brandywine.webp"
-              alt="Visa Project"
+              src={brandywineImg}
+              alt="Brandywine Project"
               className="
         w-full
         h-52
@@ -127,8 +130,8 @@ function Portfolio() {
         <div className="border border-[#8B6B3D] p-4 rounded-md">
           <div className="relative overflow-hidden rounded-lg group">
             <img
-              src="./src/assets/images/melodynest.webp"
-              alt="Visa Project"
+              src={melodynestImg}
+              alt="Melodynest Project"
               className="
         w-full
         h-52
