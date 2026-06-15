@@ -105,6 +105,67 @@ function Contact() {
           </a>
         </div>
       </div>
+      <div className="mt-12">
+  <h3
+    className="text-2xl font-semibold mb-4"
+    style={{ fontFamily: "Playfair Display" }}
+  >
+    Send a Message
+  </h3>
+
+  <form className="space-y-4">
+    <input
+      type="text"
+      placeholder="Your Name"
+      className="
+        w-full
+        border border-[#8B6B3D]
+        rounded-md
+        p-3
+        bg-transparent
+      "
+    />
+
+    <input
+      type="email"
+      placeholder="Your Email"
+      className="
+        w-full
+        border border-[#8B6B3D]
+        rounded-md
+        p-3
+        bg-transparent
+      "
+    />
+
+    <textarea
+      rows={5}
+      placeholder="Your Message"
+      className="
+        w-full
+        border border-[#8B6B3D]
+        rounded-md
+        p-3
+        bg-transparent
+      "
+    />
+
+    <button
+      type="submit"
+      className="
+        px-6 py-3
+        bg-[#8B6B3D]
+        text-white
+        rounded-md
+        hover:bg-[#6f542e]
+        transition-all
+        duration-300
+      "
+    >
+      Send Message
+    </button>
+  </form>
+</div>
     </section>
   );
 }

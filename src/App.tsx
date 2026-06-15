@@ -6,6 +6,7 @@ import Portofolio from "./components/Portofolio";
 import Skills from "./components/Skills";
 import Sidebar from "./components/Sidebar";
 import BackToTop from "./components/BackToTop";
+import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Portofolio />
         <Experience />
         <Contact />
+        <Testimonials/>
       </main>
       <BackToTop />
     </div>

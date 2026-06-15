@@ -127,6 +127,14 @@ function Sidebar() {
               {isCollapsed ? "VI" : "VI. Contact"}
             </a>
           </li>
+          <li>
+            <a
+              href="#testimonials"
+              className={navClass("testimonials")}
+            >
+              {isCollapsed ? "VII" : "VII. Testimonials"}
+            </a>
+          </li>
         </ul>
       </nav>
     </aside>
