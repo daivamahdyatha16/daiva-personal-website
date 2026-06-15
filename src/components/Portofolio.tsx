@@ -18,7 +18,7 @@ function Portfolio() {
         <div className="border border-[#8B6B3D] p-4 rounded-xl hover:shadow-lg transition-all duration-300">
           <div className="relative overflow-hidden rounded-lg group">
             <img
-              src="./src/assets/images/evisa.png"
+              src="./src/assets/images/evisa.webp"
               alt="Visa Project"
               className="
         w-full
@@ -77,7 +77,7 @@ function Portfolio() {
         <div className="border border-[#8B6B3D] p-4 rounded-md">
           <div className="relative overflow-hidden rounded-lg group">
             <img
-              src="./src/assets/images/brandywine.png"
+              src="./src/assets/images/brandywine.webp"
               alt="Visa Project"
               className="
         w-full
@@ -127,7 +127,7 @@ function Portfolio() {
         <div className="border border-[#8B6B3D] p-4 rounded-md">
           <div className="relative overflow-hidden rounded-lg group">
             <img
-              src="./src/assets/images/melodynest.png"
+              src="./src/assets/images/melodynest.webp"
               alt="Visa Project"
               className="
         w-full
