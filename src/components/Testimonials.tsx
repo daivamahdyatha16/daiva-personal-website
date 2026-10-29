@@ -1,3 +1,4 @@
+import SectionTitle from "./SectionTitle";
 function Testimonials() {
   const testimonials = [
     {
@@ -23,46 +24,47 @@ function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-12 border-b border-[#8B6B3D]"
+      className="py-16"
     >
-      <p className="uppercase tracking-[0.3em] text-sm">
-        Chapter VII
-      </p>
+      <SectionTitle chapter="VI" title="Testimonials" className="mb-4" />
 
-      <h2
-        className="text-4xl font-bold mb-8"
-        style={{ fontFamily: "Playfair Display" }}
-      >
-        Testimonials
-      </h2>
-
-      <div className="overflow-hidden">
+      <div className="overflow-hidden motion-reduce:overflow-x-auto">
   <div
     className="
       flex
+      py-4
       gap-6
       animate-[scroll_20s_linear_infinite]
+      hover:[animation-play-state:paused]
+      motion-reduce:animate-none
       w-max
     "
   >
     {[...testimonials, ...testimonials].map((item, index) => (
       <div
-        key={index}
-        className="
+        key={`${index}-${item.name}`}
+        aria-hidden={index >= testimonials.length}
+        className={`
           min-w-[320px]
           max-w-[320px]
-          border border-[#8B6B3D]
-          rounded-xl
+          paper-card
           p-6
-          bg-[#f8e6cb]
           hover:-translate-y-1
-          hover:shadow-lg
           transition-all
           duration-300
-        "
+          ${index >= testimonials.length ? "motion-reduce:hidden" : ""}
+        `}
       >
+        <span
+          aria-hidden="true"
+          className="block text-6xl leading-none h-8 text-[#8B6B3D]/40"
+          style={{ fontFamily: "Playfair Display" }}
+        >
+          &ldquo;
+        </span>
+
         <p className="italic mb-4">
-          "{item.quote}"
+          {item.quote}
         </p>
 
         <h3 className="font-semibold">

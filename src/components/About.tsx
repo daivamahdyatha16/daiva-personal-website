@@ -1,3 +1,4 @@
+import SectionTitle from "./SectionTitle";
 import {
   FaBriefcase,
   FaBuilding,
@@ -5,36 +6,50 @@ import {
   FaCode,
   FaMapMarkerAlt,
   FaGlobe,
+  FaClock,
+  FaSearch,
+  FaComments,
 } from "react-icons/fa";
+
+const principles = [
+  {
+    icon: FaClock,
+    title: "On-Time Delivery",
+    description: "Completing work according to agreed deadlines.",
+  },
+  {
+    icon: FaSearch,
+    title: "Attention to Detail",
+    description: "Being thorough in testing, analysis, and implementation.",
+  },
+  {
+    icon: FaComments,
+    title: "Clear Communication",
+    description: "Sharing progress and obstacles openly with the team.",
+  },
+];
 
 function About() {
   return (
-    <section id="about" className="py-12 border-b border-[#8B6B3D]">
-      <p className="uppercase tracking-[0.3em] text-sm">Chapter II</p>
-
-      <h2
-        className="text-4xl font-bold"
-        style={{ fontFamily: "Playfair Display" }}
-      >
-        About Me
-      </h2>
+    <section id="about" className="py-16">
+      <SectionTitle chapter="II" title="About Me" />
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-8">
         
         <div className="flex-1">
-          <p className="max-w-2xl">
+          <p className="max-w-2xl first-letter:float-left first-letter:mr-3 first-letter:text-6xl first-letter:leading-[0.85] first-letter:font-bold first-letter:font-[Playfair_Display] first-letter:text-[#8B6B3D]">
             My career began in the Indonesian Immigration IT Division, where I
             developed experience in application testing, requirements analysis,
             and digital service improvement.
           </p>
 
-          <p className="mt-10 max-w-2xl">
+          <p className="mt-4 max-w-2xl">
             Working closely with systems, stakeholders, and business processes
             has given me a practical understanding of how technology creates
             real-world impact.
           </p>
 
-          <p className="mt-10 max-w-2xl">
+          <p className="mt-4 max-w-2xl">
             Today, I am expanding my expertise into Full Stack Development,
             combining analytical thinking with modern web technologies to build
             scalable and meaningful digital solutions.
@@ -43,7 +58,7 @@ function About() {
 
         
         <div className="w-full md:w-80">
-          <div className="border border-[#8B6B3D] p-6 rounded-md">
+          <div className="paper-card p-6">
             <h3
               className="text-xl font-semibold mb-5"
               style={{ fontFamily: "Playfair Display" }}
@@ -82,6 +97,23 @@ function About() {
             </ul>
           </div>
         </div>
+      </div>
+
+      <h3
+        className="mt-12 text-2xl font-semibold"
+        style={{ fontFamily: "Playfair Display" }}
+      >
+        Work Principles
+      </h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        {principles.map(({ icon: Icon, title, description }) => (
+          <div key={title} className="paper-card p-5">
+            <Icon className="text-2xl text-[#8B6B3D] mb-3" />
+            <p className="font-semibold">{title}</p>
+            <p className="mt-2 text-sm">{description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
