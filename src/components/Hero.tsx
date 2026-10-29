@@ -10,7 +10,6 @@ function Hero() {
         items-center
         justify-between
         gap-10 md:gap-16
-        border-b border-[#8B6B3D]
       "
         >
             <div className="flex-1 w-full">
@@ -91,14 +90,29 @@ function Hero() {
             </div>
 
             <div className="flex justify-center flex-1 w-full">
+                <div className="relative">
+                <div
+                    aria-hidden="true"
+                    className="
+                            absolute
+                            inset-x-[4%]
+                            top-[12%]
+                            bottom-0
+                            rounded-t-full
+                            bg-gradient-to-b
+                            from-[#e9cd9f]/80
+                            to-[#e2bf8a]/60
+                        "
+                ></div>
                 <img
                     src={daivaImg}
                     alt="Daiva Mahdyatha"
-                    width={420}
-                    height={420}
+                    width={407}
+                    height={612}
                     loading="eager"
                     className="
-                            w-56
+                            relative
+                            w-44
                             sm:w-64
                             md:w-80
                             lg:w-[420px]
@@ -106,6 +120,7 @@ function Hero() {
                             mix-blend-multiply
                         "
                 />
+                </div>
             </div>
         </section>
     );

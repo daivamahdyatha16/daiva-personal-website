@@ -1,4 +1,5 @@
-import { useState } from "react";
+import SectionTitle from "./SectionTitle";
+import { useEffect, useState } from "react";
 import evisaImg from "../assets/images/evisa.webp";
 import brandywineImg from "../assets/images/brandywine.webp";
 import melodynestImg from "../assets/images/melodynest.webp";
@@ -6,23 +7,35 @@ import melodynestImg from "../assets/images/melodynest.webp";
 function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
-  return (
-    <section id="portfolio" className="py-12 border-b border-[#8B6B3D]">
-      <p className="uppercase tracking-[0.3em] text-sm">Chapter IV</p>
+  useEffect(() => {
+    if (!selectedProject) return;
 
-      <h2
-        className="text-4xl font-bold mb-8"
-        style={{ fontFamily: "Playfair Display" }}
-      >
-        Projects & Creations
-      </h2>
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedProject(null);
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+      previousFocus?.focus();
+    };
+  }, [selectedProject]);
+
+  return (
+    <section id="portfolio" className="py-16">
+      <SectionTitle chapter="IV" title="Projects & Creations" className="mb-8" />
 
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="border border-[#8B6B3D] p-4 rounded-xl hover:shadow-lg transition-all duration-300">
+        <div className="paper-card p-4 transition-all duration-300 hover:-translate-y-1">
           <div className="relative overflow-hidden rounded-lg group">
             <img
               src={evisaImg}
               alt="Visa Project"
+              loading="lazy"
               className="
         w-full
         h-52
@@ -65,7 +78,7 @@ function Portfolio() {
               onClick={() => setSelectedProject("visa")}
               className="
         mt-5
-        text-[#8B6B3D]
+        text-[#6f542e]
         font-semibold
         hover:translate-x-1
         transition-all
@@ -77,11 +90,12 @@ function Portfolio() {
           </div>
         </div>
 
-        <div className="border border-[#8B6B3D] p-4 rounded-md">
+        <div className="paper-card p-4 transition-all duration-300 hover:-translate-y-1">
           <div className="relative overflow-hidden rounded-lg group">
             <img
               src={brandywineImg}
               alt="Brandywine Project"
+              loading="lazy"
               className="
         w-full
         h-52
@@ -109,29 +123,39 @@ function Portfolio() {
             </span>
           </div>
 
-          <h3 className="text-xl font-bold mt-2">
-            Brandywine Services Website
-          </h3>
+          <div className="mt-4">
+            <h3 className="text-xl font-bold mt-2">
+              Brandywine Services Website
+            </h3>
 
-          <p className="mt-3 text-sm">
-            A conversion-focused website designed for a modern note-taking
-            company, featuring responsive layouts, strong calls-to-action, and
-            customer engagement pages.
-          </p>
+            <p className="mt-3 text-sm text-[#5A4630] leading-relaxed">
+              A conversion-focused website designed for a modern note-taking
+              company, featuring responsive layouts, strong calls-to-action, and
+              customer engagement pages.
+            </p>
 
-          <button
-            onClick={() => setSelectedProject("brandywine")}
-            className="mt-4 text-[#8B6B3D] font-semibold hover:underline"
-          >
-            View Content →
-          </button>
+            <button
+              onClick={() => setSelectedProject("brandywine")}
+              className="
+        mt-5
+        text-[#6f542e]
+        font-semibold
+        hover:translate-x-1
+        transition-all
+        duration-300
+      "
+            >
+              View Content →
+            </button>
+          </div>
         </div>
 
-        <div className="border border-[#8B6B3D] p-4 rounded-md">
+        <div className="paper-card p-4 transition-all duration-300 hover:-translate-y-1">
           <div className="relative overflow-hidden rounded-lg group">
             <img
               src={melodynestImg}
               alt="Melodynest Project"
+              loading="lazy"
               className="
         w-full
         h-52
@@ -159,19 +183,30 @@ function Portfolio() {
             </span>
           </div>
 
-          <h3 className="text-xl font-bold mt-2">MelodyNest Music Platform</h3>
+          <div className="mt-4">
+            <h3 className="text-xl font-bold mt-2">
+              MelodyNest Music Platform
+            </h3>
 
-          <p className="mt-3 text-sm">
-            A music discovery platform designed for college students, combining
-            nostalgic branding, customer support, and modern user experiences.
-          </p>
+            <p className="mt-3 text-sm text-[#5A4630] leading-relaxed">
+              A music discovery platform designed for college students, combining
+              nostalgic branding, customer support, and modern user experiences.
+            </p>
 
-          <button
-            onClick={() => setSelectedProject("melody")}
-            className="mt-4 text-[#8B6B3D] font-semibold hover:underline"
-          >
-            View Content →
-          </button>
+            <button
+              onClick={() => setSelectedProject("melody")}
+              className="
+        mt-5
+        text-[#6f542e]
+        font-semibold
+        hover:translate-x-1
+        transition-all
+        duration-300
+      "
+            >
+              View Content →
+            </button>
+          </div>
         </div>
       </div>
 
@@ -184,8 +219,13 @@ function Portfolio() {
             z-50
             p-4
           "
+          onClick={() => setSelectedProject(null)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+            onClick={(e) => e.stopPropagation()}
             className="
               bg-[#f8e6cb]
               text-[#2D1B0E]
@@ -198,7 +238,10 @@ function Portfolio() {
             "
           >
             <button
+              type="button"
               onClick={() => setSelectedProject(null)}
+              aria-label="Close project details"
+              autoFocus
               className="float-right text-xl"
             >
               ✕
@@ -207,6 +250,7 @@ function Portfolio() {
             {selectedProject === "visa" && (
               <>
                 <h2
+                  id="project-modal-title"
                   className="text-3xl font-bold mb-6"
                   style={{ fontFamily: "Playfair Display" }}
                 >
@@ -254,11 +298,11 @@ function Portfolio() {
                 </p>
 
                 <div className="flex gap-2 mt-2 flex-wrap">
-                  <span className="border px-2 py-1 rounded">
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">
                     Digital Service
                   </span>
-                  <span className="border px-2 py-1 rounded">Application</span>
-                  <span className="border px-2 py-1 rounded">Production</span>
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">Application</span>
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">Production</span>
                 </div>
                 <div className="mt-6 flex gap-4 flex-wrap">
                   <a
@@ -285,6 +329,7 @@ function Portfolio() {
             {selectedProject === "brandywine" && (
               <>
                 <h2
+                  id="project-modal-title"
                   className="text-3xl font-bold mb-6"
                   style={{ fontFamily: "Playfair Display" }}
                 >
@@ -370,9 +415,9 @@ function Portfolio() {
                 </p>
 
                 <div className="flex gap-2 mt-2 flex-wrap">
-                  <span className="border px-2 py-1 rounded">Testing</span>
-                  <span className="border px-2 py-1 rounded">Analysis</span>
-                  <span className="border px-2 py-1 rounded">Development</span>
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">Testing</span>
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">Analysis</span>
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">Development</span>
                 </div>
               </>
             )}
@@ -380,6 +425,7 @@ function Portfolio() {
             {selectedProject === "melody" && (
               <>
                 <h2
+                  id="project-modal-title"
                   className="text-3xl font-bold mb-6"
                   style={{ fontFamily: "Playfair Display" }}
                 >
@@ -463,9 +509,9 @@ function Portfolio() {
                 </p>
 
                 <div className="flex gap-2 mt-2 flex-wrap">
-                  <span className="border px-2 py-1 rounded">Music Discovery</span>
-                  <span className="border px-2 py-1 rounded">Responsive Design</span>
-                  <span className="border px-2 py-1 rounded">Development</span>
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">Music Discovery</span>
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">Responsive Design</span>
+                  <span className="px-3 py-1 rounded-full bg-[#8B6B3D]/10 text-sm">Development</span>
                 </div>
               </>
             )}

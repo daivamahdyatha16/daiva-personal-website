@@ -1,18 +1,37 @@
+import SectionTitle from "./SectionTitle";
 import { MdEmail } from "react-icons/md";
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
+import { useState, type FormEvent } from "react";
 
 function Contact() {
-  return (
-    <section id="contact" className="py-12">
-      <p className="uppercase tracking-[0.3em] text-sm">Chapter VI</p>
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-      <h2
-        className="text-4xl font-bold"
-        style={{ fontFamily: "Playfair Display" }}
-      >
-        Contact
-      </h2>
+  const labelClass =
+    "block mb-2 text-xs uppercase tracking-widest text-[#6f542e]";
+  const fieldClass =
+    "w-full border border-[#8B6B3D]/40 rounded-md p-3 bg-white/50 focus:outline-2 focus:outline-offset-0 focus:outline-[#8B6B3D]";
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const isFilled = ["name", "email", "message"].every(
+      (field) => String(data.get(field) ?? "").trim() !== ""
+    );
+
+    if (!isFilled) {
+      setStatus("error");
+      return;
+    }
+
+    setStatus("success");
+    form.reset();
+  };
+
+  return (
+    <section id="contact" className="py-16">
+      <SectionTitle chapter="VII" title="Contact" />
 
       <p className="mt-4 max-w-2xl">
         Feel free to reach out for collaboration, discussion, or opportunities.
@@ -21,20 +40,18 @@ function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
         <div
           className="
-              border border-[#8B6B3D]
+              paper-card
               p-5
-              rounded-md
               flex flex-col
               items-center
               text-center
               hover:-translate-y-1
-              hover:shadow-lg
               transition-all duration-300
               "
         >
           <MdEmail className="text-3xl mb-3" />
 
-          <p className="text-xs uppercase tracking-widest text-[#8B6B3D]">
+          <p className="text-xs uppercase tracking-widest text-[#6f542e]">
             Email
           </p>
 
@@ -49,20 +66,18 @@ function Contact() {
 
         <div
           className="
-              border border-[#8B6B3D]
+              paper-card
               p-5
-              rounded-md
               flex flex-col
               items-center
               text-center
               hover:-translate-y-1
-              hover:shadow-lg
               transition-all duration-300   
           "
         >
           <IoLogoGithub className="text-3xl mb-3" />
 
-          <p className="text-xs uppercase tracking-widest text-[#8B6B3D]">
+          <p className="text-xs uppercase tracking-widest text-[#6f542e]">
             GitHub
           </p>
 
@@ -78,20 +93,18 @@ function Contact() {
 
         <div
           className=" 
-              border border-[#8B6B3D]
+              paper-card
               p-5
-              rounded-md
               flex flex-col
               items-center
               text-center
               hover:-translate-y-1
-              hover:shadow-lg
               transition-all duration-300
           "
         >
           <FaLinkedin className="text-3xl mb-3" />
 
-          <p className="text-xs uppercase tracking-widest text-[#8B6B3D]">
+          <p className="text-xs uppercase tracking-widest text-[#6f542e]">
             LinkedIn
           </p>
 
@@ -113,42 +126,55 @@ function Contact() {
     Send a Message
   </h3>
 
-  <form className="space-y-4">
-    <input
-      type="text"
-      placeholder="Your Name"
-      className="
-        w-full
-        border border-[#8B6B3D]
-        rounded-md
-        p-3
-        bg-transparent
-      "
-    />
+  <form
+    className="space-y-4 paper-card p-6"
+    onSubmit={handleSubmit}
+  >
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label htmlFor="contact-name" className={labelClass}>
+          Name
+        </label>
+        <input
+          id="contact-name"
+          name="name"
+          type="text"
+          placeholder="Your Name"
+          autoComplete="name"
+          required
+          className={fieldClass}
+        />
+      </div>
 
-    <input
-      type="email"
-      placeholder="Your Email"
-      className="
-        w-full
-        border border-[#8B6B3D]
-        rounded-md
-        p-3
-        bg-transparent
-      "
-    />
+      <div>
+        <label htmlFor="contact-email" className={labelClass}>
+          Email
+        </label>
+        <input
+          id="contact-email"
+          name="email"
+          type="email"
+          placeholder="Your Email"
+          autoComplete="email"
+          required
+          className={fieldClass}
+        />
+      </div>
+    </div>
 
-    <textarea
-      rows={5}
-      placeholder="Your Message"
-      className="
-        w-full
-        border border-[#8B6B3D]
-        rounded-md
-        p-3
-        bg-transparent
-      "
-    />
+    <div>
+      <label htmlFor="contact-message" className={labelClass}>
+        Message
+      </label>
+      <textarea
+        id="contact-message"
+        name="message"
+        rows={5}
+        placeholder="Your Message"
+        required
+        className={fieldClass}
+      />
+    </div>
 
     <button
       type="submit"
@@ -164,6 +190,19 @@ function Contact() {
     >
       Send Message
     </button>
+
+    <p role="status" aria-live="polite" className="text-sm">
+      {status === "success" && (
+        <span className="text-green-800">
+          Thank you! Your message has been sent.
+        </span>
+      )}
+      {status === "error" && (
+        <span className="text-red-800">
+          Please fill in all fields before sending.
+        </span>
+      )}
+    </p>
   </form>
 </div>
     </section>

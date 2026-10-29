@@ -1,9 +1,20 @@
 import { useState, useEffect } from "react";
-import { FaBars, FaChevronLeft } from "react-icons/fa";
+import { FaBars, FaChevronLeft, FaTimes } from "react-icons/fa";
+
+const navItems = [
+  { id: "hero", numeral: "I", label: "Home" },
+  { id: "about", numeral: "II", label: "About" },
+  { id: "skills", numeral: "III", label: "Skills" },
+  { id: "portfolio", numeral: "IV", label: "Projects" },
+  { id: "experience", numeral: "V", label: "Experience" },
+  { id: "testimonials", numeral: "VI", label: "Testimonials" },
+  { id: "contact", numeral: "VII", label: "Contact" },
+];
 
 function Sidebar() {
   const [activeSection, setActiveSection] = useState("hero");
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
@@ -50,94 +61,107 @@ function Sidebar() {
   `;
 
   return (
-    <aside
-      className={`
-        hidden md:flex
-        h-screen
-        sticky top-0
-        border-r border-[#8B6B3D]
-        bg-[#f8e6cb]
-        flex-col
-        transition-all duration-300
+    <>
+      <header
+        className="
+          md:hidden
+          fixed top-0 inset-x-0
+          z-40
+          bg-[#f8e6cb]/90 backdrop-blur-sm
+          border-b border-[#8B6B3D]/30
+        "
+      >
+        <div className="flex items-center justify-between h-14 px-4">
+          <p className="text-2xl font-bold">DM</p>
 
-        ${isCollapsed ? "w-20 p-4" : "w-64 p-6"}
-      `}
-    >
-      <div className="flex items-center justify-between">
-        {!isCollapsed && (
-          <h2 className="text-3xl font-bold">
-            DM
-          </h2>
+          <button
+            type="button"
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            aria-label={isMobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileOpen}
+            aria-controls="mobile-menu"
+            className="
+              p-2
+              rounded-md
+              hover:bg-[#e8dbc0]
+              transition-colors
+            "
+          >
+            {isMobileOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
+        {isMobileOpen && (
+          <nav id="mobile-menu" className="px-4 pb-4">
+            <ul className="space-y-1">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    onClick={() => setIsMobileOpen(false)}
+                    className={navClass(item.id)}
+                  >
+                    {item.numeral}. {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         )}
+      </header>
 
-        <button
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          aria-label="Toggle Sidebar"
-          className="
-            p-2
-            rounded-md
-            hover:bg-[#e8dbc0]
-            transition-colors
-          "
-        >
-          {isCollapsed ? <FaBars /> : <FaChevronLeft />}
-        </button>
-      </div>
+      <aside
+        className={`
+          hidden md:flex
+          h-screen
+          sticky top-0
+          border-r border-[#8B6B3D]/30
+          bg-[#f3dcb6]/40
+          flex-col
+          transition-all duration-300
 
-      <nav className="mt-10 flex-1">
-        <ul className="space-y-4">
-          <li>
-            <a href="#hero" className={navClass("hero")}>
-              {isCollapsed ? "I" : "I. Home"}
-            </a>
-          </li>
+          ${isCollapsed ? "w-20 p-4" : "w-64 p-6"}
+        `}
+      >
+        <div className="flex items-center justify-between">
+          {!isCollapsed && (
+            <p className="text-3xl font-bold">
+              DM
+            </p>
+          )}
 
-          <li>
-            <a href="#about" className={navClass("about")}>
-              {isCollapsed ? "II" : "II. About"}
-            </a>
-          </li>
+          <button
+            type="button"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            aria-label="Toggle Sidebar"
+            className="
+              p-2
+              rounded-md
+              hover:bg-[#e8dbc0]
+              transition-colors
+            "
+          >
+            {isCollapsed ? <FaBars /> : <FaChevronLeft />}
+          </button>
+        </div>
 
-          <li>
-            <a href="#skills" className={navClass("skills")}>
-              {isCollapsed ? "III" : "III. Skills"}
-            </a>
-          </li>
-
-          <li>
-            <a href="#portfolio" className={navClass("portfolio")}>
-              {isCollapsed ? "IV" : "IV. Projects"}
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#experience"
-              className={navClass("experience")}
-            >
-              {isCollapsed ? "V" : "V. Experience"}
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#contact"
-              className={navClass("contact")}
-            >
-              {isCollapsed ? "VI" : "VI. Contact"}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#testimonials"
-              className={navClass("testimonials")}
-            >
-              {isCollapsed ? "VII" : "VII. Testimonials"}
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
+        <nav className="mt-10 flex-1">
+          <ul className="space-y-4">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  aria-label={isCollapsed ? item.label : undefined}
+                  className={navClass(item.id)}
+                >
+                  {isCollapsed ? item.numeral : `${item.numeral}. ${item.label}`}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+    </>
   );
 }
 
